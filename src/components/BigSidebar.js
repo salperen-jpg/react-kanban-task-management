@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useGlobalContext } from '../context/context';
+import BoardsLinks from './BoardsLinks';
 import Logo from './Logo';
 const BigSidebar = () => {
-  const { isSidebarOpen, toggleSidebar } = useGlobalContext();
+  const { isSidebarOpen, allBoards } = useGlobalContext();
 
   return (
     <Wrapper>
@@ -15,6 +16,10 @@ const BigSidebar = () => {
         <header>
           <Logo />
         </header>
+        <h4>All Boards({allBoards.length})</h4>
+        <div className='links'>
+          <BoardsLinks />
+        </div>
       </div>
     </Wrapper>
   );
@@ -26,15 +31,21 @@ const Wrapper = styled.aside`
     display: block;
 
     .big-sidebar {
-      width: 225px;
+      width: 250px;
       background-color: var(--clr-white);
       min-height: 100vh;
       height: 100%;
-      margin-left: -225px;
+      margin-left: -250px;
       transition: var(--transition);
     }
     .open-sidebar {
       margin-left: 0;
+    }
+    h4 {
+      padding-left: 2.5rem;
+      margin-top: 1rem;
+      letter-spacing: 0.1rem;
+      font-weight: 600;
     }
     header {
       height: 6rem;
@@ -44,6 +55,41 @@ const Wrapper = styled.aside`
       img {
         width: 8rem;
       }
+    }
+    .links {
+      margin: 2rem 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        padding: 0.2rem 0;
+        padding-left: 2.5rem;
+
+        cursor: pointer;
+        transition: var(--transition);
+
+        span {
+          display: flex;
+          align-items: center;
+          font-size: 1.1rem;
+        }
+        svg {
+          font-size: 1.3rem;
+        }
+      }
+    }
+    li:hover {
+      padding-left: 3rem;
+      border-left: 0.5rem solid var(--primary-800);
+    }
+    .add-task {
+      color: var(--primary-800);
+    }
+    .plus {
+      margin-right: 0.2rem;
+      font-size: 1.4rem;
     }
   }
 `;

@@ -38,6 +38,7 @@ const Wrapper = styled.nav`
     background-color: transparent;
     color: var(--primary-600);
     font-size: 2rem;
+    padding: 0;
   }
   h3 {
     display: none;

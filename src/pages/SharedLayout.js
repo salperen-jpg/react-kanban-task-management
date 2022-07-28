@@ -28,6 +28,7 @@ const Wrapper = styled.section`
   .kanban {
     width: 90vw;
     margin: 0 auto;
+    padding: 2rem 0;
   }
   @media (min-width: 992px) {
     main {
@@ -35,7 +36,6 @@ const Wrapper = styled.section`
     }
     .kanban {
       width: 90%;
-      padding: 2rem 0;
     }
   }
 `;

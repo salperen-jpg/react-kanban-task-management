@@ -6,7 +6,7 @@ const KanbanContext = React.createContext();
 
 const initialState = {
   isSidebarOpen: false,
-  filteredBoard: {},
+  filteredBoard: data[1],
   allBoards: data,
 };
 
