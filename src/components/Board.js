@@ -8,12 +8,9 @@ import AddNewColumn from './AddNewColumn';
 const Board = () => {
   const [cate, setCate] = React.useState([]);
   const { filteredBoard } = useGlobalContext();
-  console.log(filteredBoard);
-
   useEffect(() => {
     if (Object.keys(filteredBoard).length === 0) return;
     setCate(getCategories(filteredBoard.tasks));
-    console.log(cate);
   }, [filteredBoard]);
   if (filteredBoard.length === 0) {
     return <h1>There is no board right now </h1>;

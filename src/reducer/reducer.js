@@ -1,5 +1,6 @@
 import {
   HANDLE_ADD_BOARD,
+  HANDLE_FILTERED_BOARD,
   OPEN_ADD_BOARD,
   SET_FILTERED_BOARD,
   TOGGLE_SIDEBAR,
@@ -27,6 +28,13 @@ export const reducer = (state, action) => {
       allBoards: [...state.allBoards, newBoard],
       isAddBoardOpen: false,
     };
+  }
+  if (action.type === HANDLE_FILTERED_BOARD) {
+    const singleBoard = state.allBoards.find(
+      (single) => single.boardName === action.payload
+    );
+    console.log(singleBoard);
+    return { ...state, filteredBoard: singleBoard };
   }
   throw new Error(`The action type ${action.type} could not find`);
 };

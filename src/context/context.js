@@ -5,6 +5,7 @@ import {
   OPEN_ADD_BOARD,
   HANDLE_ADD_BOARD,
   SET_FILTERED_BOARD,
+  HANDLE_FILTERED_BOARD,
 } from '../actions';
 
 import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
@@ -31,6 +32,10 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: HANDLE_ADD_BOARD, payload: boardName });
   };
 
+  const handleFilteredBoard = (val) => {
+    dispatch({ type: HANDLE_FILTERED_BOARD, payload: val });
+  };
+
   useEffect(() => {
     setLocalStorage(state.allBoards);
   }, [state.allBoards]);
@@ -41,7 +46,13 @@ export const AppProvider = ({ children }) => {
 
   return (
     <KanbanContext.Provider
-      value={{ ...state, toggleSidebar, toggleAddBoard, handleAddBoard }}
+      value={{
+        ...state,
+        toggleSidebar,
+        toggleAddBoard,
+        handleAddBoard,
+        handleFilteredBoard,
+      }}
     >
       {children}
     </KanbanContext.Provider>
