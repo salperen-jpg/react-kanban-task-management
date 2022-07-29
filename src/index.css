@@ -48,6 +48,8 @@
   /* Fonts */
   --primary-font: 'Raleway', sans-serif;
   --secondary-font: 'Roboto Condensed', sans-serif;
+  --shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  --shadow-darker: 2px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* dark mode and light mode colors */
@@ -109,4 +111,27 @@ img {
   font-size: 1rem;
   border: transparent;
   cursor: pointer;
+}
+
+.form-row {
+  display: block;
+  margin: 1rem 0;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.form-input {
+  display: block;
+  height: 3rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  outline: none;
+  appearance: none;
+  border: 1px solid var(--grey-300);
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  color: inherit;
 }

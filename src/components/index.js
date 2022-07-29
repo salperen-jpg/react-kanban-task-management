@@ -4,5 +4,14 @@ import SmallSidebar from './SmallSidebar';
 import Logo from './Logo';
 import Board from './Board';
 import Status from './Status';
+import CreateNewBoard from './CreateNewBoard';
 
-export { BigSidebar, Navbar, SmallSidebar, Logo, Board, Status };
+export {
+  BigSidebar,
+  Navbar,
+  SmallSidebar,
+  Logo,
+  Board,
+  Status,
+  CreateNewBoard,
+};

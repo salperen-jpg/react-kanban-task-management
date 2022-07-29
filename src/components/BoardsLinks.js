@@ -3,7 +3,7 @@ import { BsListTask, BsPlus } from 'react-icons/bs';
 
 import { useGlobalContext } from '../context/context';
 const BoardsLinks = () => {
-  const { allBoards } = useGlobalContext();
+  const { allBoards, toggleAddBoard } = useGlobalContext();
   return (
     <ul>
       {allBoards.map(function (board) {
@@ -14,7 +14,7 @@ const BoardsLinks = () => {
           </li>
         );
       })}
-      <li className='add-task'>
+      <li className='add-task' onClick={toggleAddBoard}>
         <BsListTask />
         <span>Create new Board</span>
       </li>

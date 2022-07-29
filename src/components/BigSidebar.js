@@ -86,6 +86,7 @@ const Wrapper = styled.aside`
     }
     .add-task {
       color: var(--primary-800);
+      cursor: pointer;
     }
     .plus {
       margin-right: 0.2rem;

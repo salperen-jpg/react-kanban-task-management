@@ -29,6 +29,8 @@ const Wrapper = styled.section`
     width: 90vw;
     margin: 0 auto;
     padding: 2rem 0;
+    min-height: calc(100vh - 6rem);
+    overflow-x: scroll;
   }
   @media (min-width: 992px) {
     main {
