@@ -6,16 +6,19 @@ import {
   HANDLE_ADD_BOARD,
   SET_FILTERED_BOARD,
   HANDLE_FILTERED_BOARD,
+  TOGGLE_NEW_COLUMN,
+  HANDLE_NEW_COLUMN,
 } from '../actions';
-
+import { data } from '../utils/data';
 import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
 const KanbanContext = React.createContext();
 
 const initialState = {
   isSidebarOpen: false,
   filteredBoard: {},
-  allBoards: getLocalStorage(),
+  allBoards: data,
   isAddBoardOpen: false,
+  isAddNewColumn: false,
 };
 
 export const AppProvider = ({ children }) => {
@@ -27,6 +30,9 @@ export const AppProvider = ({ children }) => {
   const toggleAddBoard = () => {
     dispatch({ type: OPEN_ADD_BOARD });
   };
+  const toggleAddNewColumn = () => {
+    dispatch({ type: TOGGLE_NEW_COLUMN });
+  };
 
   const handleAddBoard = (boardName) => {
     dispatch({ type: HANDLE_ADD_BOARD, payload: boardName });
@@ -36,9 +42,13 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: HANDLE_FILTERED_BOARD, payload: val });
   };
 
-  useEffect(() => {
-    setLocalStorage(state.allBoards);
-  }, [state.allBoards]);
+  const handleNewColumn = (val) => {
+    dispatch({ type: HANDLE_NEW_COLUMN, payload: val });
+  };
+
+  // useEffect(() => {
+  //   setLocalStorage(state.allBoards);
+  // }, [state.allBoards]);
 
   useEffect(() => {
     dispatch({ type: SET_FILTERED_BOARD });
@@ -52,6 +62,8 @@ export const AppProvider = ({ children }) => {
         toggleAddBoard,
         handleAddBoard,
         handleFilteredBoard,
+        toggleAddNewColumn,
+        handleNewColumn,
       }}
     >
       {children}

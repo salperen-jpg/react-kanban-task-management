@@ -6,18 +6,17 @@ import styled from 'styled-components';
 import AddNewColumn from './AddNewColumn';
 
 const Board = () => {
-  const [cate, setCate] = React.useState([]);
   const { filteredBoard } = useGlobalContext();
   useEffect(() => {
     if (Object.keys(filteredBoard).length === 0) return;
-    setCate(getCategories(filteredBoard.tasks));
   }, [filteredBoard]);
-  if (filteredBoard.length === 0) {
-    return <h1>There is no board right now </h1>;
+
+  if (filteredBoard?.tasks?.length === 0) {
+    return <h3>There is no board right now </h3>;
   }
   return (
     <Wrapper>
-      {cate.map((stat, index) => {
+      {filteredBoard?.categories?.map((stat, index) => {
         return (
           <Status
             key={index}

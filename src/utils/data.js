@@ -2,6 +2,7 @@ export const data = [
   {
     id: 1,
     boardName: 'Development',
+    categories: ['todo', 'doing', 'done'],
     tasks: [
       {
         id: 1,
@@ -10,6 +11,7 @@ export const data = [
         category: 'todo',
         createdAt: 'Feb 09',
       },
+
       {
         id: 2,
         task: 'Live Chatbot App',
@@ -92,6 +94,7 @@ export const data = [
   {
     id: 2,
     boardName: 'UI Design',
+    categories: ['todo', 'doing', 'done'],
     tasks: [
       {
         id: 1,

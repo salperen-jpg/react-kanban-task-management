@@ -1,11 +1,12 @@
 import React from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import styled from 'styled-components';
-
+import { useGlobalContext } from '../context/context';
 const AddNewColumn = () => {
+  const { toggleAddNewColumn } = useGlobalContext();
   return (
     <Wrapper>
-      <button className='btn'>
+      <button className='btn' onClick={toggleAddNewColumn}>
         <AiOutlinePlus />
         Add new Column
       </button>

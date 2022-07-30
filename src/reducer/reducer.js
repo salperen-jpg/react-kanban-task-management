@@ -1,8 +1,10 @@
 import {
   HANDLE_ADD_BOARD,
   HANDLE_FILTERED_BOARD,
+  HANDLE_NEW_COLUMN,
   OPEN_ADD_BOARD,
   SET_FILTERED_BOARD,
+  TOGGLE_NEW_COLUMN,
   TOGGLE_SIDEBAR,
 } from '../actions';
 
@@ -35,6 +37,20 @@ export const reducer = (state, action) => {
     );
     console.log(singleBoard);
     return { ...state, filteredBoard: singleBoard };
+  }
+  if (action.type === TOGGLE_NEW_COLUMN) {
+    return { ...state, isAddNewColumn: !state.isAddNewColumn };
+  }
+  if (action.type === HANDLE_NEW_COLUMN) {
+    const columnName = action.payload;
+    console.log(state.filteredBoard.categories);
+    return {
+      ...state,
+      filteredBoard: {
+        ...state.filteredBoard,
+        categories: [...state.filteredBoard.categories, columnName],
+      },
+    };
   }
   throw new Error(`The action type ${action.type} could not find`);
 };
