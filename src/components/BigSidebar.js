@@ -63,12 +63,12 @@ const Wrapper = styled.aside`
         display: flex;
         align-items: center;
         gap: 1rem;
-        margin-bottom: 1rem;
-        padding: 0.2rem 0;
+        margin-bottom: 0.5rem;
+        width: 90%;
+        padding: 0.7rem 0;
         padding-left: 2.5rem;
-
         cursor: pointer;
-        transition: var(--transition);
+        transition: all 0.3s linear;
 
         span {
           display: flex;
@@ -83,6 +83,7 @@ const Wrapper = styled.aside`
     li:hover {
       padding-left: 3rem;
       border-left: 0.5rem solid var(--primary-800);
+      width: 100%;
     }
     .add-task {
       color: var(--primary-800);

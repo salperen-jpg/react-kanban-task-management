@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useGlobalContext } from '../context/context';
 import Logo from './Logo';
 const Navbar = () => {
-  const { toggleSidebar } = useGlobalContext();
+  const { toggleSidebar, toggleAddTask } = useGlobalContext();
   return (
     <Wrapper>
       <div className='nav-center'>
@@ -16,7 +16,9 @@ const Navbar = () => {
           <Logo />
         </div>
 
-        <button className='btn'>Add task</button>
+        <button className='btn' onClick={toggleAddTask}>
+          Add task
+        </button>
       </div>
     </Wrapper>
   );

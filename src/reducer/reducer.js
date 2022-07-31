@@ -4,6 +4,7 @@ import {
   HANDLE_NEW_COLUMN,
   OPEN_ADD_BOARD,
   SET_FILTERED_BOARD,
+  TOGGLE_ADD_TASK,
   TOGGLE_NEW_COLUMN,
   TOGGLE_SIDEBAR,
 } from '../actions';
@@ -51,6 +52,9 @@ export const reducer = (state, action) => {
         categories: [...state.filteredBoard.categories, columnName],
       },
     };
+  }
+  if (action.type === TOGGLE_ADD_TASK) {
+    return { ...state, isAddTaskOpen: !state.isAddTaskOpen };
   }
   throw new Error(`The action type ${action.type} could not find`);
 };

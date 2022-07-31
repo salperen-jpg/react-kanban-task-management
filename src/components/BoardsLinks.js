@@ -1,15 +1,20 @@
 import React from 'react';
-import { BsListTask, BsPlus } from 'react-icons/bs';
+import { BsListTask } from 'react-icons/bs';
+import styled from 'styled-components';
 
 import { useGlobalContext } from '../context/context';
 const BoardsLinks = () => {
-  const { allBoards, toggleAddBoard, handleFilteredBoard } = useGlobalContext();
+  const { allBoards, filteredBoard, toggleAddBoard, handleFilteredBoard } =
+    useGlobalContext();
   return (
-    <ul>
+    <Wrapper>
       {allBoards.map(function (board) {
         return (
           <li
             key={board.id}
+            className={
+              filteredBoard.boardName === board.boardName ? 'active' : null
+            }
             onClick={() => {
               handleFilteredBoard(board.boardName);
             }}
@@ -23,8 +28,18 @@ const BoardsLinks = () => {
         <BsListTask />
         <span>Create new Board</span>
       </li>
-    </ul>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.ul`
+  .active {
+    background-color: var(--primary-700);
+    width: 90%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: var(--clr-white);
+  }
+`;
 
 export default BoardsLinks;

@@ -8,6 +8,8 @@ import {
   HANDLE_FILTERED_BOARD,
   TOGGLE_NEW_COLUMN,
   HANDLE_NEW_COLUMN,
+  TOGGLE_ADD_TASK,
+  HANDLE_ADD_TASK,
 } from '../actions';
 import { data } from '../utils/data';
 import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
@@ -15,10 +17,11 @@ const KanbanContext = React.createContext();
 
 const initialState = {
   isSidebarOpen: false,
-  filteredBoard: {},
-  allBoards: data,
   isAddBoardOpen: false,
   isAddNewColumn: false,
+  isAddTaskOpen: false,
+  filteredBoard: {},
+  allBoards: data,
 };
 
 export const AppProvider = ({ children }) => {
@@ -46,6 +49,14 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: HANDLE_NEW_COLUMN, payload: val });
   };
 
+  const toggleAddTask = () => {
+    dispatch({ type: TOGGLE_ADD_TASK });
+  };
+
+  const handleAddTask = () => {
+    dispatch({ type: HANDLE_ADD_TASK });
+  };
+
   // useEffect(() => {
   //   setLocalStorage(state.allBoards);
   // }, [state.allBoards]);
@@ -64,6 +75,8 @@ export const AppProvider = ({ children }) => {
         handleFilteredBoard,
         toggleAddNewColumn,
         handleNewColumn,
+        toggleAddTask,
+        handleAddTask,
       }}
     >
       {children}
