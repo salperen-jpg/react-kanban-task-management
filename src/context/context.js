@@ -53,8 +53,9 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: TOGGLE_ADD_TASK });
   };
 
-  const handleAddTask = () => {
-    dispatch({ type: HANDLE_ADD_TASK });
+  const handleAddTask = (task) => {
+    console.log(task);
+    dispatch({ type: HANDLE_ADD_TASK, payload: task });
   };
 
   // useEffect(() => {

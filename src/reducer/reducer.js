@@ -1,5 +1,6 @@
 import {
   HANDLE_ADD_BOARD,
+  HANDLE_ADD_TASK,
   HANDLE_FILTERED_BOARD,
   HANDLE_NEW_COLUMN,
   OPEN_ADD_BOARD,
@@ -55,6 +56,9 @@ export const reducer = (state, action) => {
   }
   if (action.type === TOGGLE_ADD_TASK) {
     return { ...state, isAddTaskOpen: !state.isAddTaskOpen };
+  }
+  if (action.type === HANDLE_ADD_TASK) {
+    return { ...state };
   }
   throw new Error(`The action type ${action.type} could not find`);
 };

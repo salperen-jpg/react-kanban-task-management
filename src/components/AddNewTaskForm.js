@@ -3,9 +3,10 @@ import { useGlobalContext } from '../context/context';
 import styled from 'styled-components';
 import FormRow from './FormRow';
 import { MdClose } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 const AddNewTaskForm = () => {
-  const { filteredBoard, toggleAddTask } = useGlobalContext();
+  const { filteredBoard, toggleAddTask, handleAddTask } = useGlobalContext();
   const [task, setTask] = React.useState({
     taskName: '',
     taskDescription: '',
@@ -16,6 +17,12 @@ const AddNewTaskForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { taskName, taskDescription, category, priority } = task;
+    if (!taskName || !taskDescription || !category || !priority) {
+      toast.error('Fill  all the  blanks');
+      return;
+    }
+    handleAddTask(task);
   };
 
   const handleChange = (e) => {
@@ -70,7 +77,9 @@ const AddNewTaskForm = () => {
               </select>
             </div>
             <div className='form-row'>
-              <button className='submit-btn btn'>Add Task</button>
+              <button type='submit' className='submit-btn btn'>
+                Add Task
+              </button>
             </div>
           </form>
         </div>
