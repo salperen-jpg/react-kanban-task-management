@@ -40,6 +40,7 @@
   --red-dark: #842029;
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
+  --clr-body: #f0f4f8;
   /* OTHERS */
   --spacing: 0.1rem;
   --transition: all ease-in-out 0.3s;
@@ -52,7 +53,78 @@
   --shadow-darker: 2px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
-/* dark mode and light mode colors */
+/* dark mode-light mode colors */
+.light-theme {
+  /* COLORS */
+  --primary-50: #f8f4ff;
+  --primary-100: #f1e9fe;
+  --primary-200: #eadefe;
+  --primary-300: #e3d3fe;
+  --primary-400: #ddc8fd;
+  --primary-500: #c19cfc;
+  --primary-600: #ba91fc;
+  --primary-700: #b387fb;
+  --primary-800: #ac7cfb;
+  --primary-900: #a067fa;
+
+  /* grey */
+  --grey-50: #f0f4f8;
+  --grey-100: #d9e2ec;
+  --grey-200: #bcccdc;
+  --grey-300: #9fb3c8;
+  --grey-400: #829ab1;
+  --grey-500: #627d98;
+  --grey-600: #486581;
+  --grey-700: #334e68;
+  --grey-800: #243b53;
+  --grey-900: #102a43;
+  /* rest of the colors */
+  --clr-black: #000;
+  --clr-white: #fff;
+  --clr-body: #f0f4f8;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --clr-text: #627d98;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+}
+
+.dark-theme {
+  /* COLORS */
+  --primary-50: #f8f4ff;
+  --primary-100: #f1e9fe;
+  --primary-200: #eadefe;
+  --primary-300: #e3d3fe;
+  --primary-400: #ddc8fd;
+  --primary-500: #c19cfc;
+  --primary-600: #ba91fc;
+  --primary-700: #b387fb;
+  --primary-800: #ac7cfb;
+  --primary-900: #a067fa;
+
+  /* grey */
+  --grey-50: #f0f4f8;
+  --grey-100: #d9e2ec;
+  --grey-200: #bcccdc;
+  --grey-300: #9fb3c8;
+  --grey-400: #829ab1;
+  --grey-500: #627d98;
+  --grey-600: #486581;
+  --grey-700: #334e68;
+  --grey-800: #243b53;
+  --grey-900: #102a43;
+  /* rest of the colors */
+  --clr-black: #000;
+  --clr-white: #252945;
+  --red-light: #f8d7da;
+  --clr-body: #141625;
+  --red-dark: #842029;
+  --clr-text: #9fb3c8;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+}
+
+/* dark=light mode finished */
 
 h1 {
   font-size: 3rem;
@@ -80,9 +152,9 @@ h5 {
 }
 /* GLOBALS */
 body {
-  background-color: #f0f4f8;
+  background-color: var(--clr-body);
   font-family: var(--primary-font);
-  color: #627d98;
+  color: var(--grey-500);
 }
 a {
   text-decoration: none;

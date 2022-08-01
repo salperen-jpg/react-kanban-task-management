@@ -5,6 +5,7 @@ import { useGlobalContext } from '../context/context';
 import Logo from './Logo';
 const Navbar = () => {
   const { toggleSidebar, toggleAddTask } = useGlobalContext();
+
   return (
     <Wrapper>
       <div className='nav-center'>

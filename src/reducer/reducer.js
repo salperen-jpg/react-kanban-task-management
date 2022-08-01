@@ -6,6 +6,7 @@ import {
   OPEN_ADD_BOARD,
   SET_FILTERED_BOARD,
   TOGGLE_ADD_TASK,
+  TOGGLE_DARK_MODE,
   TOGGLE_NEW_COLUMN,
   TOGGLE_SIDEBAR,
 } from '../actions';
@@ -58,7 +59,31 @@ export const reducer = (state, action) => {
     return { ...state, isAddTaskOpen: !state.isAddTaskOpen };
   }
   if (action.type === HANDLE_ADD_TASK) {
-    return { ...state };
+    const task = action.payload;
+    const taskSchema = {
+      id: new Date().getDate().toString(),
+      task: task.taskName,
+      text: task.taskDescription,
+      category: task.category,
+      priority: task.priority,
+      createdAt: 'Feb 09',
+    };
+    return {
+      ...state,
+      filteredBoard: {
+        ...state.filteredBoard,
+        tasks: [...state.filteredBoard.tasks, taskSchema],
+      },
+    };
+  }
+  if (action.type === TOGGLE_DARK_MODE) {
+    let theme;
+    if (state.theme === 'light-theme') {
+      theme = 'dark-theme';
+    } else {
+      theme = 'light-theme';
+    }
+    return { ...state, theme: theme };
   }
   throw new Error(`The action type ${action.type} could not find`);
 };

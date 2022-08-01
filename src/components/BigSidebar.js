@@ -3,9 +3,16 @@ import styled from 'styled-components';
 import { useGlobalContext } from '../context/context';
 import BoardsLinks from './BoardsLinks';
 import Logo from './Logo';
+import { MdOutlineWbSunny, MdDarkMode } from 'react-icons/md';
+import { BiHide } from 'react-icons/bi';
+import Theme from './Theme';
 const BigSidebar = () => {
-  const { isSidebarOpen, allBoards } = useGlobalContext();
+  const { isSidebarOpen, allBoards, theme, toggleDarkMode } =
+    useGlobalContext();
 
+  React.useEffect(() => {
+    document.documentElement.className = theme;
+  });
   return (
     <Wrapper>
       <div
@@ -13,13 +20,17 @@ const BigSidebar = () => {
           !isSidebarOpen ? 'big-sidebar open-sidebar ' : 'big-sidebar '
         }
       >
-        <header>
-          <Logo />
-        </header>
-        <h4>All Boards({allBoards.length})</h4>
-        <div className='links'>
-          <BoardsLinks />
+        <div>
+          <header>
+            <Logo />
+          </header>
+          <h4>All Boards({allBoards.length})</h4>
+          <div className='links'>
+            <BoardsLinks />
+          </div>
         </div>
+
+        <Theme />
       </div>
     </Wrapper>
   );
@@ -29,7 +40,6 @@ const Wrapper = styled.aside`
   display: none;
   @media (min-width: 992px) {
     display: block;
-
     .big-sidebar {
       width: 250px;
       background-color: var(--clr-white);
@@ -37,6 +47,9 @@ const Wrapper = styled.aside`
       height: 100%;
       margin-left: -250px;
       transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .open-sidebar {
       margin-left: 0;
@@ -93,6 +106,13 @@ const Wrapper = styled.aside`
       margin-right: 0.2rem;
       font-size: 1.4rem;
     }
+  }
+  .active {
+    background-color: var(--primary-700);
+    width: 90%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: var(--clr-white);
   }
 `;
 export default BigSidebar;

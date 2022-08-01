@@ -21,13 +21,14 @@ const Wrapper = styled.article`
   p {
     letter-spacing: 0.1rem;
     margin-bottom: 0.75rem;
-    color: var(--grey-700);
+    color: var(--clr-text);
     font-weight: 600;
   }
   span {
     font-size: 0.8rem;
     line-height: 1.7;
     letter-spacing: 1px;
+    color: var(--clr-text);
   }
   small {
     margin-top: 1rem;

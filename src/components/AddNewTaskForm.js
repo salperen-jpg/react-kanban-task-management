@@ -11,7 +11,7 @@ const AddNewTaskForm = () => {
     taskName: '',
     taskDescription: '',
     category: '',
-    priority: '',
+    priority: 1,
   });
   const { isAddTaskOpen } = useGlobalContext();
 
@@ -55,6 +55,8 @@ const AddNewTaskForm = () => {
               type='number'
               name='priority'
               value={task.priority}
+              min={1}
+              max={5}
               handleChange={handleChange}
               labelText='Task Priority'
             />
@@ -103,6 +105,9 @@ const Wrapper = styled.aside`
     opacity: 1;
     z-index: 4;
   }
+  h3 {
+    font-weight: 600;
+  }
   .content {
     background-color: var(--clr-white);
     padding: 3rem;
@@ -129,6 +134,7 @@ const Wrapper = styled.aside`
     font-size: 1rem;
     letter-spacing: 0.1rem;
     color: inherit;
+    background-color: var(--clr-white);
   }
   .submit-btn {
     width: 100%;
@@ -139,6 +145,9 @@ const Wrapper = styled.aside`
       display: grid;
       gap: 1rem;
       grid-template-columns: 1fr 1fr;
+      .form-row {
+        margin: 0.5rem 0;
+      }
     }
   }
 `;

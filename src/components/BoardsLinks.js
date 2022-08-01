@@ -1,11 +1,20 @@
 import React from 'react';
 import { BsListTask } from 'react-icons/bs';
 import styled from 'styled-components';
-
+import { AiOutlinePlus } from 'react-icons/ai';
 import { useGlobalContext } from '../context/context';
-const BoardsLinks = () => {
-  const { allBoards, filteredBoard, toggleAddBoard, handleFilteredBoard } =
-    useGlobalContext();
+const BoardsLinks = ({ sidebarlink }) => {
+  const handleSmallSidebar = () => {
+    toggleSidebar();
+  };
+
+  const {
+    allBoards,
+    filteredBoard,
+    toggleAddBoard,
+    handleFilteredBoard,
+    toggleSidebar,
+  } = useGlobalContext();
   return (
     <Wrapper>
       {allBoards.map(function (board) {
@@ -17,6 +26,9 @@ const BoardsLinks = () => {
             }
             onClick={() => {
               handleFilteredBoard(board.boardName);
+              if (sidebarlink) {
+                handleSmallSidebar();
+              }
             }}
           >
             <BsListTask />
@@ -26,6 +38,7 @@ const BoardsLinks = () => {
       })}
       <li className='add-task' onClick={toggleAddBoard}>
         <BsListTask />
+
         <span>Create new Board</span>
       </li>
     </Wrapper>
@@ -33,12 +46,10 @@ const BoardsLinks = () => {
 };
 
 const Wrapper = styled.ul`
-  .active {
-    background-color: var(--primary-700);
-    width: 90%;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    color: var(--clr-white);
+  .add-task {
+    color: green;
+    cursor: pointer;
+    display: flex;
   }
 `;
 

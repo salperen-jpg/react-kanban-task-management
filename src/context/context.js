@@ -10,6 +10,7 @@ import {
   HANDLE_NEW_COLUMN,
   TOGGLE_ADD_TASK,
   HANDLE_ADD_TASK,
+  TOGGLE_DARK_MODE,
 } from '../actions';
 import { data } from '../utils/data';
 import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
@@ -22,6 +23,7 @@ const initialState = {
   isAddTaskOpen: false,
   filteredBoard: {},
   allBoards: data,
+  theme: 'dark-theme',
 };
 
 export const AppProvider = ({ children }) => {
@@ -58,6 +60,10 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: HANDLE_ADD_TASK, payload: task });
   };
 
+  const toggleDarkMode = () => {
+    dispatch({ type: TOGGLE_DARK_MODE });
+  };
+
   // useEffect(() => {
   //   setLocalStorage(state.allBoards);
   // }, [state.allBoards]);
@@ -78,6 +84,7 @@ export const AppProvider = ({ children }) => {
         handleNewColumn,
         toggleAddTask,
         handleAddTask,
+        toggleDarkMode,
       }}
     >
       {children}

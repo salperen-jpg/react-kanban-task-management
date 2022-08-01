@@ -10,6 +10,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'todo',
         createdAt: 'Feb 09',
+        priority: 5,
       },
 
       {
@@ -18,6 +19,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'todo',
         createdAt: 'Feb 09',
+        priority: 1,
       },
       {
         id: 3,
@@ -25,6 +27,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'todo',
         createdAt: 'Feb 09',
+        priority: 3,
       },
       {
         id: 4,
@@ -32,6 +35,7 @@ export const data = [
         category: 'todo',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         createdAt: 'Feb 09',
+        priority: 2,
       },
       {
         id: 5,
@@ -39,6 +43,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'doing',
         createdAt: 'Feb 09',
+        priority: 1,
       },
       {
         id: 6,
@@ -46,6 +51,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'doing',
         createdAt: 'Feb 09',
+        priority: 4,
       },
       {
         id: 7,
@@ -53,6 +59,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'doing',
         createdAt: 'Feb 09',
+        priority: 2,
       },
       {
         id: 8,
@@ -60,6 +67,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'doing',
         createdAt: 'Feb 09',
+        priority: 3,
       },
       {
         id: 9,
@@ -67,6 +75,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'done',
         createdAt: 'Feb 09',
+        priority: 1,
       },
       {
         id: 10,
@@ -74,6 +83,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'done',
         createdAt: 'Feb 09',
+        priority: 3,
       },
       {
         id: 11,
@@ -81,6 +91,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'done',
         createdAt: 'Feb 09',
+        priority: 2,
       },
       {
         id: 12,
@@ -88,6 +99,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'done',
         createdAt: 'Feb 09',
+        priority: 1,
       },
     ],
   },
@@ -102,6 +114,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'todo',
         createdAt: 'Feb 09',
+        priority: 2,
       },
       {
         id: 2,
@@ -109,6 +122,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'todo',
         createdAt: 'Feb 09',
+        priority: 4,
       },
       {
         id: 3,
@@ -116,6 +130,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'todo',
         createdAt: 'Feb 09',
+        priority: 1,
       },
       {
         id: 4,
@@ -123,6 +138,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'todo',
         createdAt: 'Feb 09',
+        priority: 2,
       },
       {
         id: 5,
@@ -130,6 +146,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'doing',
         createdAt: 'Feb 09',
+        priority: 3,
       },
       {
         id: 6,
@@ -137,6 +154,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'doing',
         createdAt: 'Feb 09',
+        priority: 2,
       },
       {
         id: 7,
@@ -144,6 +162,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'doing',
         createdAt: 'Feb 09',
+        priority: 5,
       },
       {
         id: 8,
@@ -151,6 +170,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'doing',
         createdAt: 'Feb 09',
+        priority: 1,
       },
       {
         id: 9,
@@ -158,6 +178,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'done',
         createdAt: 'Feb 09',
+        priority: 4,
       },
       {
         id: 10,
@@ -165,6 +186,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'done',
         createdAt: 'Feb 09',
+        priority: 2,
       },
       {
         id: 11,
@@ -172,6 +194,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'done',
         createdAt: 'Feb 09',
+        priority: 3,
       },
       {
         id: 12,
@@ -179,6 +202,7 @@ export const data = [
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, similique.',
         category: 'done',
         createdAt: 'Feb 09',
+        priority: 1,
       },
     ],
   },
